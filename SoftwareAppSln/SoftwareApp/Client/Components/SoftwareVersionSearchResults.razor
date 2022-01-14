@@ -1,0 +1,16 @@
+﻿@using SoftwareApp.Shared
+
+<h3>Software Version Results</h3>
+
+<input type="text" @bind="@searchText" @onblur="() => OnEnterSearchText()" /><button @onclick="() => OnSearchClick()">Search</button>
+<div class="row">@searchTextError</div>
+
+<div class="container">
+@foreach(Software software in searchResults)
+{
+    <div class="row">
+        <div class="col">@software.Name</div>
+        <div class="col">@software.Version</div>
+    </div>
+}
+</div>
